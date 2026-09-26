@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TTM — Plateforme web · Prototype interactif</title>
+<meta name="description" content="TTM — Trouve ton match. Prototype web de la plateforme de mise en relation des clubs de football.">
+<link rel="icon" href="../assets/logo/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<!-- ======================= SIDEBAR ======================= -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <a href="../index.html" class="row-2" style="text-decoration:none" title="Retour au hub TTM">
+      <span id="brandMark"></span>
+      <span class="brand-text ttm-lockup-txt"><b>TTM</b><i>TROUVE TON MATCH</i></span>
+    </a>
+    <button class="btn btn-ghost btn-icon btn-sm hide-sm" id="collapseBtn" style="margin-left:auto" aria-label="Réduire le menu">
+      <span id="collapseIco"></span>
+    </button>
+  </div>
+
+  <!-- Club switcher -->
+  <div class="sidebar-foot" style="order:-1;border-bottom:1px solid var(--ttm-border);border-top:none;padding:12px">
+    <div class="dropdown" id="clubDd" style="width:100%">
+      <button class="club-switch" data-dd>
+        <span id="clubLogo"></span>
+        <span class="club-switch-text flex-1" style="text-align:left;min-width:0">
+          <b style="display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">AS Courbevoie</b>
+          <i style="display:block;font-style:normal;font-size:11px;color:var(--ttm-text-muted)">7 équipes · Président</i>
+        </span>
+        <span class="club-switch-text" id="clubChev"></span>
+      </button>
+      <div class="dropdown-menu" style="width:100%">
+        <div class="dropdown-label">Vos clubs</div>
+        <button class="dropdown-item is-active"><span id="clubLogo2"></span> AS Courbevoie <span class="trail">7</span></button>
+        <button class="dropdown-item"><span class="club-logo club-logo-sm" style="background:linear-gradient(135deg,#DC2626,#7F1D1D)">FCM</span> FC Montreuil <span class="trail">11</span></button>
+        <div class="dropdown-sep"></div>
+        <button class="dropdown-item" data-act="newclub"><span class="club-logo club-logo-sm" style="background:var(--ttm-surface-3);color:var(--ttm-text-muted)">+</span> Créer un nouveau club</button>
+        <div class="dropdown-sep"></div>
+        <button class="dropdown-item" data-act="switchcoach"><span data-ico="users"></span> Passer en vue Coach</button>
+        <button class="dropdown-item" data-act="parent"><span data-ico="shield"></span> Aperçu module Parents</button>
+      </div>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav" id="nav">
+    <div class="nav-group">
+      <div class="nav-group-label">Principal</div>
+      <a class="nav-item" data-go="dashboard"><span data-ico="home"></span><span>Dashboard</span></a>
+      <a class="nav-item" data-go="marketplace"><span data-ico="target"></span><span>Trouver un match</span><span class="nav-item-badge" id="navBadgeMatches">24</span></a>
+      <a class="nav-item" data-go="mymatches"><span data-ico="calendar"></span><span>Mes matchs</span></a>
+      <a class="nav-item" data-go="calendar"><span data-ico="layout"></span><span>Calendrier</span></a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-label">Club</div>
+      <a class="nav-item" data-go="teams"><span data-ico="shield"></span><span>Équipes</span><span class="nav-item-badge" style="background:var(--ttm-accent-soft);color:var(--ttm-accent)">7</span></a>
+      <a class="nav-item" data-go="coaches"><span data-ico="users"></span><span>Coachs</span></a>
+      <a class="nav-item" data-go="clubs"><span data-ico="globe"></span><span>Clubs</span><span class="nav-item-badge" style="background:var(--ttm-neutral-soft);color:var(--ttm-text-secondary)">14</span></a>
+      <a class="nav-item" data-go="tournaments"><span data-ico="trophy"></span><span>Tournois</span></a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-label">Communication</div>
+      <a class="nav-item" data-go="messages"><span data-ico="message"></span><span>Messages</span><span class="nav-item-badge" id="navBadgeMsgs">3</span></a>
+      <a class="nav-item" data-go="requests"><span data-ico="handshake"></span><span>Demandes</span><span class="nav-item-badge" id="navBadgeReq">3</span></a>
+      <a class="nav-item" data-go="notifications"><span data-ico="bell"></span><span>Notifications</span><span class="nav-item-badge" id="navBadgeNotif">4</span></a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-label">Pilotage</div>
+      <a class="nav-item" data-go="stats"><span data-ico="barChart"></span><span>Statistiques</span></a>
+      <a class="nav-item" data-go="map"><span data-ico="mapPin"></span><span>Carte</span></a>
+      <a class="nav-item" data-go="settings"><span data-ico="settings"></span><span>Paramètres</span></a>
+    </div>
+  </nav>
+
+  <div class="sidebar-foot">
+    <div class="card card-brand card-pad-sm" style="padding:12px">
+      <div class="row-2" style="margin-bottom:6px">
+        <span class="badge badge-brand" style="padding-inline:7px">PRO</span>
+        <span class="t-micro" style="font-weight:700">Offre Pro Club</span>
+      </div>
+      <p class="t-micro t-secondary" style="line-height:1.45">14 matchs recommandés par le moteur cette semaine.</p>
+      <button class="btn btn-primary btn-xs btn-block" style="margin-top:9px" data-act="upgrade">Voir l'offre</button>
+    </div>
+  </div>
+</aside>
+
+<!-- ======================= TOPBAR ======================= -->
+<header class="topbar" style="margin-left:var(--sidebar-w)">
+  <button class="btn btn-ghost btn-icon only-md" id="menuBtn" aria-label="Ouvrir le menu"><span data-ico="menu"></span></button>
+  <div class="flex-1" style="min-width:0">
+    <div class="crumbs hide-sm" id="crumbs"></div>
+    <h1 class="topbar-title" id="pageTitle">Dashboard</h1>
+  </div>
+
+  <div class="search-bar hide-sm" style="max-width:300px" id="globalSearch">
+    <span class="s-icon" data-ico="search"></span>
+    <input type="search" placeholder="Rechercher un club, un match…" aria-label="Recherche globale">
+    <button class="s-clear" aria-label="Effacer"><span data-ico="x"></span></button>
+  </div>
+
+  <button class="btn btn-ghost btn-icon" id="themeBtn" data-theme-toggle aria-label="Basculer le thème"></button>
+
+  <div class="dropdown" id="notifDd">
+    <button class="btn btn-ghost btn-icon" data-dd style="position:relative" aria-label="Notifications">
+      <span data-ico="bell"></span>
+      <span class="badge-num" id="topBadge">4</span>
+    </button>
+    <div class="dropdown-menu right" style="width:340px;padding:0">
+      <div class="row-between" style="padding:12px 14px;border-bottom:1px solid var(--ttm-border)">
+        <b class="t-body-sm">Notifications</b>
+        <button class="btn btn-ghost btn-xs" data-act="readall">Tout marquer comme lu</button>
+      </div>
+      <div id="ddNotifs" style="max-height:340px;overflow-y:auto"></div>
+      <a class="btn btn-ghost btn-sm btn-block" href="#/notifications" style="border-radius:0 0 var(--r-lg) var(--r-lg)">Voir tout</a>
+    </div>
+  </div>
+
+  <div class="dropdown" id="userDd">
+    <button class="row-2" data-dd style="padding:4px 6px;border-radius:var(--r-md)" aria-label="Profil">
+      <span id="userAvatar"></span>
+      <span class="hide-sm" style="text-align:left">
+        <b style="display:block;font-size:12.5px;line-height:1.2">Karim Benali</b>
+        <i style="display:block;font-style:normal;font-size:11px;color:var(--ttm-text-muted)">Président</i>
+      </span>
+      <span class="hide-sm" data-ico="chevronDown"></span>
+    </button>
+    <div class="dropdown-menu right">
+      <div class="dropdown-label">Compte</div>
+      <button class="dropdown-item" data-go="settings"><span data-ico="user"></span> Mon profil</button>
+      <button class="dropdown-item" data-go="settings"><span data-ico="building"></span> Mon club</button>
+      <button class="dropdown-item" data-act="parent"><span data-ico="shield"></span> Aperçu Parents</button>
+      <div class="dropdown-sep"></div>
+      <button class="dropdown-item danger" data-act="logout"><span data-ico="logOut"></span> Se déconnecter</button>
+    </div>
+  </div>
+</header>
+
+<!-- ======================= MAIN ======================= -->
+<main class="app-main" id="main" style="margin-left:var(--sidebar-w)">
+  <div id="view" class="view-root"></div>
+  <footer class="app-foot">
+    <div class="row-2 wrap" style="gap:16px">
+      <span class="t-micro t-muted">TTM — Trouve ton match · Prototype interactif v1.0 · données de démonstration synthétiques</span>
+    </div>
+    <div class="row-2">
+      <a class="t-micro t-secondary link-anim" href="../mobile/index.html">Application mobile</a>
+      <span class="t-muted">·</span>
+      <a class="t-micro t-secondary link-anim" href="../landing/index.html">Landing page</a>
+      <span class="t-muted">·</span>
+      <a class="t-micro t-secondary link-anim" href="../deck/index.html">Présentation</a>
+      <span class="t-muted">·</span>
+      <button class="t-micro t-brand link-anim" data-act="reset">Réinitialiser la démo</button>
+    </div>
+  </footer>
+</main>
+
+<!-- FAB mobile -->
+<button class="fab only-md" id="fab" aria-label="Publier un match" style="display:none">
+  <span data-ico="plus" data-size="24"></span>
+</button>
+
+<!-- ======================= SCRIPTS ======================= -->
+<script src="../assets/js/ttm-data.js"></script>
+<script src="../assets/js/ttm-core.js"></script>
+<script src="../assets/js/ttm-engine.js"></script>
+<script src="../assets/js/ttm-pitch.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

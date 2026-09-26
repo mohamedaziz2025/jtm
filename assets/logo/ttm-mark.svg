@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="TTM">
+  <title>TTM — Trouve ton match</title>
+  <defs>
+    <linearGradient id="ttmGrad" x1="6" y1="4" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3B82F6"/>
+      <stop offset="0.52" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+    <linearGradient id="ttmSheen" x1="10" y1="4" x2="40" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.34"/>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Conteneur -->
+  <rect x="2" y="2" width="60" height="60" rx="19" fill="url(#ttmGrad)"/>
+  <rect x="2" y="2" width="60" height="60" rx="19" fill="url(#ttmSheen)"/>
+
+  <!-- Lignes de terrain (discrètes) -->
+  <g stroke="#ffffff" stroke-opacity="0.30" stroke-width="1.5" stroke-linecap="round" fill="none">
+    <path d="M12 43.5h40"/>
+    <path d="M12 13.5h40" stroke-opacity="0.16"/>
+  </g>
+
+  <!-- Lettre T = trait de touche + axe médian -->
+  <path d="M17 17.5h30a2 2 0 0 1 2 2v2.2a2 2 0 0 1-2 2H36.6v19.4a2 2 0 0 1-2 2h-4.2a2 2 0 0 1-2-2V23.7H17a2 2 0 0 1-2-2v-2.2a2 2 0 0 1 2-2Z" fill="#ffffff"/>
+
+  <!-- Cercle central = terrain / rencontre -->
+  <circle cx="32" cy="43.6" r="7.1" fill="none" stroke="#ffffff" stroke-opacity="0.92" stroke-width="2.1"/>
+
+  <!-- Nœud lumineux = le match trouvé -->
+  <circle cx="32" cy="43.6" r="3.05" fill="#ffffff"/>
+  <circle cx="32" cy="43.6" r="3.05" fill="#22D3EE" fill-opacity="0.45"/>
+</svg>

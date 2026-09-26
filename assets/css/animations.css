@@ -1,0 +1,290 @@
+/* ============================================================
+   TTM — Animations & Keyframes
+   Durées 90–620ms · ease-out / spring / cubic-bezier
+   ============================================================ */
+
+/* ---------- KEYFRAMES ---------- */
+@keyframes ttm-spin { to { transform: rotate(360deg); } }
+
+@keyframes ttm-fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+@keyframes ttm-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes ttm-fade-down {
+  from { opacity: 0; transform: translateY(-14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes ttm-fade-right {
+  from { opacity: 0; transform: translateX(-18px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes ttm-fade-left {
+  from { opacity: 0; transform: translateX(18px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes ttm-zoom-in {
+  from { opacity: 0; transform: scale(.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes ttm-pop {
+  0% { opacity: 0; transform: scale(.88) translateY(6px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes ttm-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+@keyframes ttm-ping {
+  0% { transform: scale(.72); opacity: .9; }
+  70% { transform: scale(1.5); opacity: 0; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes ttm-blink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .35; transform: scale(.82); }
+}
+
+@keyframes ttm-breathe {
+  0%, 100% { box-shadow: 0 0 0 5px var(--ttm-accent-soft); }
+  50% { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
+}
+
+@keyframes ttm-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+
+@keyframes ttm-float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(1.4deg); }
+}
+
+@keyframes ttm-dash { to { stroke-dashoffset: -48; } }
+
+@keyframes ttm-msg-in {
+  from { opacity: 0; transform: translateY(10px) scale(.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes ttm-typing {
+  0%, 60%, 100% { transform: translateY(0); opacity: .45; }
+  30% { transform: translateY(-5px); opacity: 1; }
+}
+
+@keyframes ttm-sheen {
+  0% { transform: translateX(-120%) skewX(-18deg); }
+  100% { transform: translateX(220%) skewX(-18deg); }
+}
+
+@keyframes ttm-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes ttm-rotate-slow { to { transform: rotate(360deg); } }
+
+@keyframes ttm-gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes ttm-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes ttm-count-pulse {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+@keyframes ttm-orbit {
+  from { transform: rotate(0deg) translateX(var(--orbit-r, 90px)) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(var(--orbit-r, 90px)) rotate(-360deg); }
+}
+
+@keyframes ttm-scan {
+  0% { transform: translateY(-100%); opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+@keyframes ttm-ball-trail {
+  0% { offset-distance: 0%; opacity: 0; }
+  8% { opacity: 1; }
+  92% { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+
+@keyframes ttm-confetti {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(240px) rotate(720deg); opacity: 0; }
+}
+
+@keyframes ttm-bob-ball {
+  0%, 100% { transform: translateY(0) scaleY(1); }
+  35% { transform: translateY(-16px) scaleY(1.08) scaleX(.96); }
+  55% { transform: translateY(0) scaleY(.88) scaleX(1.06); }
+}
+
+@keyframes ttm-ring-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   CLASSES D'ANIMATION
+   ============================================================ */
+.anim-fade { animation: ttm-fade-in var(--d-slow) var(--e-out) both; }
+.anim-up { animation: ttm-fade-up var(--d-slow) var(--e-out) both; }
+.anim-down { animation: ttm-fade-down var(--d-slow) var(--e-out) both; }
+.anim-right { animation: ttm-fade-right var(--d-slow) var(--e-out) both; }
+.anim-left { animation: ttm-fade-left var(--d-slow) var(--e-out) both; }
+.anim-zoom { animation: ttm-zoom-in var(--d-slow) var(--e-out) both; }
+.anim-pop { animation: ttm-pop var(--d-base) var(--e-spring) both; }
+
+/* Stagger */
+.stagger > * { animation: ttm-fade-up var(--d-slow) var(--e-out) both; }
+.stagger > *:nth-child(1) { animation-delay: .02s; }
+.stagger > *:nth-child(2) { animation-delay: .06s; }
+.stagger > *:nth-child(3) { animation-delay: .10s; }
+.stagger > *:nth-child(4) { animation-delay: .14s; }
+.stagger > *:nth-child(5) { animation-delay: .18s; }
+.stagger > *:nth-child(6) { animation-delay: .22s; }
+.stagger > *:nth-child(7) { animation-delay: .26s; }
+.stagger > *:nth-child(8) { animation-delay: .30s; }
+.stagger > *:nth-child(9) { animation-delay: .34s; }
+.stagger > *:nth-child(10) { animation-delay: .38s; }
+.stagger > *:nth-child(11) { animation-delay: .42s; }
+.stagger > *:nth-child(12) { animation-delay: .46s; }
+.stagger-fast > * { animation: ttm-fade-up var(--d-base) var(--e-out) both; }
+.stagger-fast > *:nth-child(1) { animation-delay: .02s; }
+.stagger-fast > *:nth-child(2) { animation-delay: .05s; }
+.stagger-fast > *:nth-child(3) { animation-delay: .08s; }
+.stagger-fast > *:nth-child(4) { animation-delay: .11s; }
+.stagger-fast > *:nth-child(5) { animation-delay: .14s; }
+.stagger-fast > *:nth-child(6) { animation-delay: .17s; }
+.stagger-fast > *:nth-child(7) { animation-delay: .20s; }
+.stagger-fast > *:nth-child(8) { animation-delay: .23s; }
+.stagger-fast > *:nth-child(9) { animation-delay: .26s; }
+.stagger-fast > *:nth-child(10) { animation-delay: .29s; }
+
+/* Reveal au scroll */
+.reveal { opacity: 0; transform: translateY(28px); }
+.reveal.in {
+  animation: ttm-fade-up var(--d-slower) var(--e-out) forwards;
+}
+
+/* Hover lift */
+.lift { transition: transform var(--d-base) var(--e-out), box-shadow var(--d-base) var(--e-out); }
+.lift:hover { transform: translateY(-4px); }
+
+/* Sheen sur bouton / card */
+.sheen { position: relative; overflow: hidden; }
+.sheen::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: 42%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .38), transparent);
+  transform: translateX(-120%) skewX(-18deg);
+}
+.sheen:hover::after { animation: ttm-sheen .82s var(--e-out); }
+
+/* Gradient animé */
+.grad-anim { background-size: 200% 200%; animation: ttm-gradient-shift 7s var(--e-soft) infinite; }
+
+/* Dessin de trait (terrain) */
+.draw-path { stroke-dasharray: var(--len, 1200); stroke-dashoffset: var(--len, 1200); animation: ttm-draw 1.5s var(--e-out) forwards; }
+
+/* Scanline */
+.scanline { position: absolute; left: 0; right: 0; height: 34%; background: linear-gradient(180deg, transparent, rgba(34, 211, 238, .10), transparent); animation: ttm-scan 5.5s var(--e-soft) infinite; }
+
+/* Orbite */
+.orbit { animation: ttm-orbit var(--dur, 16s) linear infinite; }
+
+/* Rotation lente */
+.spin-slow { animation: ttm-rotate-slow 22s linear infinite; }
+.spin-slow-rev { animation: ttm-rotate-slow 30s linear infinite reverse; }
+
+/* Badge notification */
+.badge-num {
+  position: absolute; top: -5px; right: -5px; min-width: 18px; height: 18px;
+  padding-inline: 4px; border-radius: var(--r-full);
+  background: var(--ttm-danger); color: #fff;
+  font-size: 10px; font-weight: var(--fw-black);
+  display: grid; place-items: center;
+  border: 2px solid var(--ttm-surface);
+  animation: ttm-pop var(--d-base) var(--e-spring) both;
+}
+.badge-num.pulse { animation: ttm-pop var(--d-base) var(--e-spring) both, ttm-breathe 2.2s var(--e-soft) infinite; }
+
+/* Lien animé (soulignement) */
+.link-anim { position: relative; }
+.link-anim::after {
+  content: ""; position: absolute; left: 0; bottom: -2px; width: 100%; height: 1.5px;
+  background: currentColor; transform: scaleX(0); transform-origin: right;
+  transition: transform var(--d-base) var(--e-out);
+}
+.link-anim:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* Ticker */
+.ticker { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.ticker-track { display: flex; width: max-content; animation: ttm-marquee 34s linear infinite; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+
+/* Confetti */
+.confetti { position: fixed; inset: 0; pointer-events: none; z-index: var(--z-tooltip); overflow: hidden; }
+.confetti i {
+  position: absolute; top: -12px; width: 8px; height: 12px; border-radius: 2px;
+  animation: ttm-confetti var(--dur, 2.2s) var(--e-out) forwards;
+}
+
+/* Ballon qui rebondit */
+.ball-bounce { animation: ttm-bob-ball 1.1s var(--e-out) infinite; transform-origin: bottom center; }
+
+/* Compteur — pulse */
+.count-pulse { animation: ttm-count-pulse var(--d-slow) var(--e-spring); }
+
+/* Route layout (transitions de page) */
+.page-enter { animation: ttm-fade-up var(--d-slow) var(--e-out) both; }
+.page-enter-back { animation: ttm-fade-left var(--d-slow) var(--e-out) both; }
+
+/* Item list : stagger au changement de filtre */
+.list-item { animation: ttm-fade-up var(--d-base) var(--e-out) both; }
+
+/* Safe areas mobile */
+.safe-t { padding-top: env(safe-area-inset-top); }
+.safe-b { padding-bottom: env(safe-area-inset-bottom); }
+
+/* ============================================================
+   ACCESSIBILITÉ — mouvement réduit
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .ticker-track { animation: none; }
+}
+
+/* ============================================================
+   TRANSITION DE THÈME (douce)
+   ============================================================ */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition: background-color 420ms var(--e-soft),
+              color 420ms var(--e-soft),
+              border-color 420ms var(--e-soft),
+              box-shadow 420ms var(--e-soft) !important;
+  transition-delay: 0ms !important;
+}

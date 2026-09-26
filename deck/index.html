@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TTM — Deck de présentation (20 slides, 16:9)</title>
+<link rel="icon" href="../assets/logo/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body class="dk-body">
+
+<header class="dk-bar">
+  <div class="row-2" style="gap:10px">
+    <img src="../assets/logo/ttm-logo-dark.svg" alt="TTM" height="22">
+    <span class="t-micro t-muted">Deck de présentation · 20 slides · 16:9</span>
+  </div>
+  <div class="row-2" style="gap:6px">
+    <button class="btn btn-ghost btn-xs" id="dkPrev" title="Slide précédente">‹</button>
+    <span class="t-micro t-muted" id="dkCount">1 / 20</span>
+    <button class="btn btn-ghost btn-xs" id="dkNext" title="Slide suivante">›</button>
+    <span class="dk-sep"></span>
+    <button class="btn btn-ghost btn-xs" data-k="o">Vue d'ensemble</button>
+    <button class="btn btn-ghost btn-xs" data-k="n">Notes</button>
+    <button class="btn btn-ghost btn-xs" data-k="f">Plein écran</button>
+    <a class="btn btn-ghost btn-xs" href="../index.html">Hub</a>
+  </div>
+</header>
+
+<main class="dk-stage" id="dkStage"></main>
+<div class="dk-progress"><i id="dkBar"></i></div>
+
+<aside class="dk-notes" id="dkNotes" hidden>
+  <div class="t-micro t-muted" style="letter-spacing:.14em">NOTES DU PRÉSENTATEUR</div>
+  <p id="dkNoteText"></p>
+</aside>
+
+<div class="dk-grid" id="dkGrid" hidden></div>
+
+<script src="../assets/js/ttm-data.js"></script>
+<script src="../assets/js/ttm-core.js"></script>
+<script src="deck.js"></script>
+</body>
+</html>

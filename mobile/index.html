@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TTM Mobile — Prototype application mobile (14 écrans)</title>
+<meta name="description" content="Prototype mobile TTM : 14 écrans, du login à la mise en relation, avec données de démonstration France.">
+<link rel="icon" href="../assets/logo/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="mobile.css">
+</head>
+<body class="m-stage">
+
+<header class="m-top">
+  <div class="m-top-brand">
+    <img src="../assets/logo/ttm-logo-dark.svg" alt="TTM" height="26">
+    <span class="badge badge-brand">Prototype mobile</span>
+  </div>
+  <p class="t-caption t-secondary">14 écrans · 390 × 844 · navigation par onglets, push et modales.</p>
+</header>
+
+<div class="m-layout">
+
+  <aside class="m-side">
+    <div class="card card-flat card-pad-sm m-side-head">
+      <b class="t-body-sm">Parcours complet</b>
+      <div class="t-micro t-muted"> du compte au calendrier</div>
+    </div>
+    <ol class="m-side-list" id="screenList"></ol>
+    <div class="stack stack-2" style="padding:12px">
+      <button class="btn btn-outline btn-sm btn-block" id="btnTheme">Thème clair / sombre</button>
+      <a class="btn btn-ghost btn-sm btn-block" href="../web/index.html">Version web</a>
+      <a class="btn btn-ghost btn-sm btn-block" href="../index.html">Hub du projet</a>
+    </div>
+  </aside>
+
+  <div class="m-device-col">
+    <div class="m-device">
+      <div class="m-notch"></div>
+      <div class="m-status">
+        <span class="t-micro" id="mClock">9:41</span>
+        <span class="m-status-right">
+          <span class="t-micro" id="mNet">5G</span>
+          <span class="m-battery"></span>
+        </span>
+      </div>
+      <div class="m-viewport" id="mViewport"></div>
+      <nav class="m-tabbar" id="mTabbar"></nav>
+      <div class="m-home-indicator"></div>
+    </div>
+    <p class="t-micro t-muted m-device-cap" id="screenCaption"></p>
+  </div>
+
+</div>
+
+<script src="../assets/js/ttm-data.js"></script>
+<script src="../assets/js/ttm-core.js"></script>
+<script src="../assets/js/ttm-engine.js"></script>
+<script src="mobile.js"></script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+/* ============================================================
+   TTM — TROUVE TON MATCH
+   Design System · Tokens
+   Source de vérité unique (couleurs, typo, espaces, rayon,
+   ombres, mouvement, élévation, z-index, breakpoints)
+   ============================================================ */
+
+:root {
+  /* ---------- 1. COULEURS DE MARQUE ---------- */
+  --ttm-navy: #07111F;
+  --ttm-navy-900: #04101C;
+  --ttm-navy-800: #07111F;
+  --ttm-navy-700: #101B2D;
+  --ttm-navy-600: #16243A;
+  --ttm-blue: #2563EB;
+  --ttm-blue-600: #1D4ED8;
+  --ttm-blue-400: #3B82F6;
+  --ttm-blue-200: #93C5FD;
+  --ttm-cyan: #22D3EE;
+  --ttm-cyan-400: #67E8F9;
+  --ttm-cyan-ink: #0E7490;
+  --ttm-orange-ink: #C2410C;
+  --ttm-white: #FFFFFF;
+  --ttm-gray-soft: #F4F7FB;
+  --ttm-green: #22C55E;
+  --ttm-orange: #F59E0B;
+  --ttm-red: #EF4444;
+  --ttm-purple: #8B5CF6;
+  --ttm-pink: #EC4899;
+
+  /* ---------- 2. GRADIENTS ---------- */
+  --grad-brand: linear-gradient(135deg, #2563EB 0%, #22D3EE 100%);
+  --grad-brand-soft: linear-gradient(135deg, rgba(37, 99, 235, .16) 0%, rgba(34, 211, 238, .12) 100%);
+  --grad-blue-purple: linear-gradient(135deg, #2563EB 0%, #8B5CF6 100%);
+  --grad-cyan-blue: linear-gradient(135deg, #22D3EE 0%, #2563EB 100%);
+  --grad-sunrise: linear-gradient(135deg, #F59E0B 0%, #EC4899 100%);
+  --grad-btn: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  --grad-text: linear-gradient(135deg, #1D4ED8 0%, #0E7490 100%);
+  --grad-pitch: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(37, 99, 235, .22) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 50% at 80% 100%, rgba(34, 211, 238, .16) 0%, transparent 70%);
+
+  /* ---------- 3. ÉTAT INTERNE (light) ---------- */
+  --ttm-bg: var(--ttm-gray-soft);
+  --ttm-bg-alt: #EAF0F8;
+  --ttm-surface: #FFFFFF;
+  --ttm-surface-2: #F8FAFD;
+  --ttm-surface-3: #EEF3FA;
+  --ttm-surface-inverse: var(--ttm-navy);
+  --ttm-overlay: rgba(7, 17, 31, .48);
+  --ttm-glass: rgba(255, 255, 255, .72);
+  --ttm-glass-border: rgba(7, 17, 31, .08);
+
+  --ttm-text: #07111F;
+  --ttm-text-secondary: #55647D;
+  --ttm-text-muted: #5F6E85;
+  --ttm-text-inverse: #FFFFFF;
+  --ttm-text-brand: #1D4ED8;
+
+  --ttm-border: rgba(7, 17, 31, .09);
+  --ttm-border-strong: rgba(7, 17, 31, .16);
+  --ttm-border-brand: rgba(37, 99, 235, .32);
+
+  --ttm-accent: #2563EB;
+  --ttm-accent-hover: #1D4ED8;
+  --ttm-brand: var(--ttm-accent);
+  --ttm-brand-soft: var(--ttm-accent-soft);
+  --ttm-accent-soft: rgba(37, 99, 235, .10);
+  --ttm-accent-soft-2: rgba(37, 99, 235, .16);
+
+  --ttm-success: #166534;
+  --ttm-success-soft: rgba(34, 197, 94, .12);
+  --ttm-warning: #B45309;
+  --ttm-warning-soft: rgba(245, 158, 11, .12);
+  --ttm-danger: #B91C1C;
+  --ttm-danger-soft: rgba(239, 68, 68, .12);
+  --ttm-info: #1D4ED8;
+  --ttm-info-soft: rgba(37, 99, 235, .10);
+  --ttm-neutral-soft: rgba(90, 107, 133, .10);
+
+  /* ---------- 4. ÉTAT INTERNE (dark) ---------- */
+  --d-bg: #07111F;
+  --d-bg-alt: #0A1524;
+  --d-surface: #101B2D;
+  --d-surface-2: #16243A;
+  --d-surface-3: #1C2C45;
+  --d-glass: rgba(16, 27, 45, .72);
+  --d-glass-border: rgba(255, 255, 255, .09);
+  --d-text: #FFFFFF;
+  --d-text-secondary: #94A3B8;
+  --d-text-muted: #6B7C93;
+  --d-border: rgba(255, 255, 255, .08);
+  --d-border-strong: rgba(255, 255, 255, .16);
+  --d-accent: #3B82F6;
+  --d-accent-hover: #60A5FA;
+  --d-accent-soft: rgba(59, 130, 246, .16);
+  --d-accent-soft-2: rgba(59, 130, 246, .26);
+
+  /* ---------- 5. TYPOGRAPHIE ---------- */
+  --font-sans: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, "Roboto Mono", Menlo, monospace;
+  --font-numeric: "Inter", -apple-system, sans-serif;
+
+  --fs-display: clamp(2.6rem, 1.2rem + 4.4vw, 5rem);
+  --fs-h1: clamp(2rem, 1.4rem + 2.2vw, 3.25rem);
+  --fs-h2: clamp(1.55rem, 1.2rem + 1.4vw, 2.25rem);
+  --fs-h3: clamp(1.2rem, 1.05rem + .6vw, 1.5rem);
+  --fs-h4: 1.0625rem;
+  --fs-body-lg: 1.0625rem;
+  --fs-body: .9375rem;
+  --fs-body-sm: .875rem;
+  --fs-caption: .8125rem;
+  --fs-micro: .6875rem;
+
+  --lh-tight: 1.06;
+  --lh-snug: 1.22;
+  --lh-normal: 1.45;
+  --lh-relaxed: 1.65;
+
+  --ls-display: -.035em;
+  --ls-tight: -.022em;
+  --ls-normal: -.011em;
+  --ls-wide: .02em;
+  --ls-caps: .13em;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-black: 800;
+
+  /* ---------- 6. ESPACEMENT (4pt) ---------- */
+  --s-0: 0;
+  --s-1: .25rem;   /*  4 */
+  --s-2: .5rem;    /*  8 */
+  --s-3: .75rem;   /* 12 */
+  --s-4: 1rem;     /* 16 */
+  --s-5: 1.25rem;  /* 20 */
+  --s-6: 1.5rem;   /* 24 */
+  --s-7: 2rem;     /* 32 */
+  --s-8: 2.5rem;   /* 40 */
+  --s-9: 3rem;     /* 48 */
+  --s-10: 4rem;    /* 64 */
+  --s-11: 5rem;    /* 80 */
+  --s-12: 6rem;    /* 96 */
+  --s-13: 8rem;    /* 128 */
+
+  /* ---------- 7. RAYONS ---------- */
+  --r-xs: 6px;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 18px;
+  --r-xl: 24px;
+  --r-2xl: 32px;
+  --r-3xl: 44px;
+  --r-full: 999px;
+
+  /* ---------- 8. OMBRES / ÉLÉVATION ---------- */
+  --sh-xs: 0 1px 2px rgba(7, 17, 31, .06);
+  --sh-sm: 0 1px 2px rgba(7, 17, 31, .05), 0 2px 6px rgba(7, 17, 31, .05);
+  --sh-md: 0 2px 4px rgba(7, 17, 31, .04), 0 8px 20px rgba(7, 17, 31, .07);
+  --sh-lg: 0 4px 8px rgba(7, 17, 31, .05), 0 18px 40px rgba(7, 17, 31, .10);
+  --sh-xl: 0 8px 16px rgba(7, 17, 31, .06), 0 32px 72px rgba(7, 17, 31, .14);
+  --sh-brand: 0 6px 18px rgba(37, 99, 235, .28);
+  --sh-brand-lg: 0 12px 40px rgba(37, 99, 235, .38);
+  --sh-cyan: 0 6px 20px rgba(34, 211, 238, .32);
+  --sh-inset: inset 0 1px 0 rgba(255, 255, 255, .6);
+
+  /* ---------- 9. MOUVEMENT ---------- */
+  --d-instant: 90ms;
+  --d-fast: 150ms;
+  --d-base: 220ms;
+  --d-slow: 320ms;
+  --d-slower: 400ms;
+  --d-deliberate: 620ms;
+
+  --e-out: cubic-bezier(.22, 1, .36, 1);
+  --e-in-out: cubic-bezier(.65, 0, .35, 1);
+  --e-in: cubic-bezier(.55, 0, 1, .45);
+  --e-spring: cubic-bezier(.34, 1.56, .64, 1);
+  --e-soft: cubic-bezier(.4, 0, .2, 1);
+
+  /* ---------- 10. Z-INDEX ---------- */
+  --z-base: 1;
+  --z-sticky: 100;
+  --z-nav: 200;
+  --z-drawer: 300;
+  --z-overlay: 400;
+  --z-modal: 500;
+  --z-toast: 600;
+  --z-tooltip: 700;
+
+  /* ---------- 11. LAYOUT ---------- */
+  --sidebar-w: 268px;
+  --sidebar-w-collapsed: 76px;
+  --topbar-h: 68px;
+  --tabbar-h: 64px;
+  --container: 1280px;
+  --container-wide: 1480px;
+  --container-text: 68ch;
+
+  /* ---------- 12. BREAKPOINTS (référence) ---------- */
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --bp-2xl: 1440px;
+}
+
+/* ============================================================
+   THÈME SOMBRE
+   ============================================================ */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --ttm-cyan-ink: #67E8F9;
+  --ttm-orange-ink: #FBBF24;
+  --grad-btn: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  --grad-text: linear-gradient(135deg, #60A5FA 0%, #22D3EE 100%);
+
+  --ttm-bg: var(--d-bg);
+  --ttm-bg-alt: var(--d-bg-alt);
+  --ttm-surface: var(--d-surface);
+  --ttm-surface-2: var(--d-surface-2);
+  --ttm-surface-3: var(--d-surface-3);
+  --ttm-surface-inverse: #FFFFFF;
+  --ttm-overlay: rgba(2, 6, 14, .72);
+  --ttm-glass: var(--d-glass);
+  --ttm-glass-border: var(--d-glass-border);
+
+  --ttm-text: var(--d-text);
+  --ttm-text-secondary: var(--d-text-secondary);
+  --ttm-text-muted: var(--d-text-muted);
+  --ttm-text-inverse: #07111F;
+  --ttm-text-brand: #7DD3FC;
+
+  --ttm-border: var(--d-border);
+  --ttm-border-strong: var(--d-border-strong);
+  --ttm-border-brand: rgba(59, 130, 246, .40);
+
+  --ttm-accent: var(--d-accent);
+  --ttm-accent-hover: var(--d-accent-hover);
+  --ttm-accent-soft: var(--d-accent-soft);
+  --ttm-accent-soft-2: var(--d-accent-soft-2);
+
+  --ttm-success: #4ADE80;
+  --ttm-success-soft: rgba(74, 222, 128, .14);
+  --ttm-warning: #FBBF24;
+  --ttm-warning-soft: rgba(251, 191, 36, .14);
+  --ttm-danger: #F87171;
+  --ttm-danger-soft: rgba(248, 113, 113, .14);
+  --ttm-info: #60A5FA;
+  --ttm-info-soft: rgba(96, 165, 250, .14);
+  --ttm-neutral-soft: rgba(148, 163, 184, .12);
+
+  --sh-xs: 0 1px 2px rgba(0, 0, 0, .40);
+  --sh-sm: 0 1px 2px rgba(0, 0, 0, .40), 0 2px 8px rgba(0, 0, 0, .34);
+  --sh-md: 0 2px 6px rgba(0, 0, 0, .38), 0 10px 26px rgba(0, 0, 0, .40);
+  --sh-lg: 0 6px 14px rgba(0, 0, 0, .42), 0 22px 48px rgba(0, 0, 0, .48);
+  --sh-xl: 0 10px 22px rgba(0, 0, 0, .46), 0 36px 80px rgba(0, 0, 0, .58);
+  --sh-inset: inset 0 1px 0 rgba(255, 255, 255, .05);
+
+  --grad-brand-soft: linear-gradient(135deg, rgba(59, 130, 246, .20) 0%, rgba(34, 211, 238, .14) 100%);
+  --grad-pitch: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(37, 99, 235, .30) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 50% at 80% 100%, rgba(34, 211, 238, .20) 0%, transparent 70%);
+}
