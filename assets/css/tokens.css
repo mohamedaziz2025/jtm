@@ -1,110 +1,182 @@
 /* ============================================================
    TTM — TROUVE TON MATCH
    Design System · Tokens
+   Bleu marine + blanc · Baloo 2 (display) + Inter (interface)
    Source de vérité unique (couleurs, typo, espaces, rayon,
    ombres, mouvement, élévation, z-index, breakpoints)
    ============================================================ */
 
+/* ---------- 0. POLICES (auto-hébergées : fonctionne en file://) ---------- */
+@font-face {
+  font-family: "Baloo 2";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("../fonts/baloo2-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+                 U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Baloo 2";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("../fonts/baloo2-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+                 U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+                 U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("../fonts/inter-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+                 U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
-  /* ---------- 1. COULEURS DE MARQUE ---------- */
-  --ttm-navy: #07111F;
-  --ttm-navy-900: #04101C;
-  --ttm-navy-800: #07111F;
-  --ttm-navy-700: #101B2D;
-  --ttm-navy-600: #16243A;
-  --ttm-blue: #2563EB;
-  --ttm-blue-600: #1D4ED8;
-  --ttm-blue-400: #3B82F6;
-  --ttm-blue-200: #93C5FD;
-  --ttm-cyan: #22D3EE;
-  --ttm-cyan-400: #67E8F9;
-  --ttm-cyan-ink: #0E7490;
-  --ttm-orange-ink: #C2410C;
+  /* ---------- 1. BLEU MARINE (marque) ---------- */
+  --ttm-navy-950: #040D1A;
+  --ttm-navy-900: #061529;
+  --ttm-navy-850: #081C36;
+  --ttm-navy-800: #0A2140;
+  --ttm-navy-700: #0E2C56;
+  --ttm-navy-600: #123A6B;
+  --ttm-navy-500: #17457F;
+  --ttm-navy-400: #1D5296;
+  --ttm-navy: #0A2140;
+
+  /* ---------- 1b. AZUR (accent, toujours dans la famille bleue) ---------- */
+  --ttm-azure-700: #16489E;
+  --ttm-azure-600: #1F5BC4;
+  --ttm-azure-500: #2C6BD1;
+  --ttm-azure-400: #4A8AE8;
+  --ttm-azure-300: #7FB0F2;
+  --ttm-azure-200: #B6D2F7;
+  --ttm-azure-100: #DCEAFB;
+  --ttm-azure-50:  #F1F6FD;
+
+  /* ---------- 1c. NEUTRES & BLANCS ---------- */
   --ttm-white: #FFFFFF;
-  --ttm-gray-soft: #F4F7FB;
-  --ttm-green: #22C55E;
+  --ttm-ice: #F4F7FC;
+  --ttm-ice-2: #EAF0F9;
+
+  /* ---------- 1d. ÉTATS ---------- */
+  --ttm-green: #16A34A;
+  --ttm-green-ink: #15803D;
   --ttm-orange: #F59E0B;
-  --ttm-red: #EF4444;
-  --ttm-purple: #8B5CF6;
-  --ttm-pink: #EC4899;
+  --ttm-orange-ink: #B45309;
+  --ttm-red: #E11D48;
+  --ttm-red-ink: #B91C1C;
+  --ttm-teal-ink: #0E7490;
+
+  /* ---------- 1e. PALETTE GRAPHIQUE (profonde, lisible sur blanc) ---------- */
+  --ttm-c1: #17457F;
+  --ttm-c2: #2C6BD1;
+  --ttm-c3: #4A8AE8;
+  --ttm-c4: #0E7490;
+  --ttm-c5: #B45309;
+  --ttm-c6: #6D28D9;
+  --ttm-c7: #15803D;
+  --ttm-c8: #B91C1C;
 
   /* ---------- 2. GRADIENTS ---------- */
-  --grad-brand: linear-gradient(135deg, #2563EB 0%, #22D3EE 100%);
-  --grad-brand-soft: linear-gradient(135deg, rgba(37, 99, 235, .16) 0%, rgba(34, 211, 238, .12) 100%);
-  --grad-blue-purple: linear-gradient(135deg, #2563EB 0%, #8B5CF6 100%);
-  --grad-cyan-blue: linear-gradient(135deg, #22D3EE 0%, #2563EB 100%);
-  --grad-sunrise: linear-gradient(135deg, #F59E0B 0%, #EC4899 100%);
-  --grad-btn: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
-  --grad-text: linear-gradient(135deg, #1D4ED8 0%, #0E7490 100%);
-  --grad-pitch: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(37, 99, 235, .22) 0%, transparent 70%),
-                radial-gradient(ellipse 60% 50% at 80% 100%, rgba(34, 211, 238, .16) 0%, transparent 70%);
+  --grad-brand: linear-gradient(135deg, #17457F 0%, #2C6BD1 100%);
+  --grad-brand-soft: linear-gradient(135deg, rgba(23, 69, 127, .12) 0%, rgba(44, 107, 209, .10) 100%);
+  --grad-azure: linear-gradient(135deg, #1F5BC4 0%, #4A8AE8 100%);
+  --grad-btn: linear-gradient(135deg, #1B4C8E 0%, #0A2140 100%);
+  --grad-navy: linear-gradient(168deg, #0A2140 0%, #061529 62%, #040D1A 100%);
+  --grad-navy-soft: linear-gradient(168deg, #123A6B 0%, #0A2140 100%);
+  --grad-rail: linear-gradient(180deg, #0A2140 0%, #081C36 55%, #061529 100%);
+  --grad-text: linear-gradient(135deg, #17457F 0%, #2C6BD1 60%, #0E7490 100%);
+  --grad-sunrise: linear-gradient(135deg, #F59E0B 0%, #E11D48 100%);
+  --grad-success: linear-gradient(135deg, #15803D 0%, #16A34A 100%);
+  --grad-white-fade: linear-gradient(180deg, rgba(255, 255, 255, .14) 0%, rgba(255, 255, 255, 0) 100%);
+  --grad-pitch: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(23, 69, 127, .16) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 50% at 85% 100%, rgba(44, 107, 209, .13) 0%, transparent 70%);
 
   /* ---------- 3. ÉTAT INTERNE (light) ---------- */
-  --ttm-bg: var(--ttm-gray-soft);
-  --ttm-bg-alt: #EAF0F8;
+  --ttm-bg: var(--ttm-ice);
+  --ttm-bg-alt: var(--ttm-ice-2);
   --ttm-surface: #FFFFFF;
   --ttm-surface-2: #F8FAFD;
-  --ttm-surface-3: #EEF3FA;
-  --ttm-surface-inverse: var(--ttm-navy);
-  --ttm-overlay: rgba(7, 17, 31, .48);
-  --ttm-glass: rgba(255, 255, 255, .72);
-  --ttm-glass-border: rgba(7, 17, 31, .08);
+  --ttm-surface-3: #EDF2F9;
+  --ttm-surface-inverse: var(--ttm-navy-800);
+  --ttm-overlay: rgba(6, 21, 41, .55);
+  --ttm-glass: rgba(255, 255, 255, .78);
+  --ttm-glass-border: rgba(10, 33, 64, .08);
 
-  --ttm-text: #07111F;
-  --ttm-text-secondary: #55647D;
-  --ttm-text-muted: #5F6E85;
+  --ttm-text: #0A2140;
+  --ttm-text-secondary: #4A5D78;
+  --ttm-text-muted: #6B7C94;
   --ttm-text-inverse: #FFFFFF;
-  --ttm-text-brand: #1D4ED8;
+  --ttm-text-brand: #17457F;
 
-  --ttm-border: rgba(7, 17, 31, .09);
-  --ttm-border-strong: rgba(7, 17, 31, .16);
-  --ttm-border-brand: rgba(37, 99, 235, .32);
+  --ttm-border: rgba(10, 33, 64, .10);
+  --ttm-border-strong: rgba(10, 33, 64, .17);
+  --ttm-border-brand: rgba(23, 69, 127, .30);
 
-  --ttm-accent: #2563EB;
-  --ttm-accent-hover: #1D4ED8;
+  --ttm-accent: #17457F;
+  --ttm-accent-hover: #0E2C56;
   --ttm-brand: var(--ttm-accent);
-  --ttm-brand-soft: var(--ttm-accent-soft);
-  --ttm-accent-soft: rgba(37, 99, 235, .10);
-  --ttm-accent-soft-2: rgba(37, 99, 235, .16);
+  --ttm-brand-soft: var(--ttm-accent);
+  --ttm-brand-ink: var(--ttm-azure-600);
+  --ttm-accent-soft: rgba(23, 69, 127, .09);
+  --ttm-accent-soft-2: rgba(23, 69, 127, .16);
 
-  --ttm-success: #166534;
-  --ttm-success-soft: rgba(34, 197, 94, .12);
+  --ttm-success: #15803D;
+  --ttm-success-soft: rgba(22, 163, 74, .12);
   --ttm-warning: #B45309;
-  --ttm-warning-soft: rgba(245, 158, 11, .12);
+  --ttm-warning-soft: rgba(245, 158, 11, .14);
   --ttm-danger: #B91C1C;
-  --ttm-danger-soft: rgba(239, 68, 68, .12);
-  --ttm-info: #1D4ED8;
-  --ttm-info-soft: rgba(37, 99, 235, .10);
-  --ttm-neutral-soft: rgba(90, 107, 133, .10);
+  --ttm-danger-soft: rgba(225, 29, 72, .12);
+  --ttm-info: #1F5BC4;
+  --ttm-info-soft: rgba(31, 91, 196, .10);
+  --ttm-neutral-soft: rgba(74, 93, 120, .10);
+
+  /* ---------- 3b. RAIL MARINE (barre latérale, toujours marine) ---------- */
+  --rail-bg: var(--grad-rail);
+  --rail-text: rgba(255, 255, 255, .74);
+  --rail-text-strong: #FFFFFF;
+  --rail-text-muted: rgba(255, 255, 255, .48);
+  --rail-hover: rgba(255, 255, 255, .09);
+  --rail-active: rgba(255, 255, 255, .15);
+  --rail-border: rgba(255, 255, 255, .10);
+  --rail-glass: rgba(255, 255, 255, .07);
+  --rail-shadow: 0 24px 60px rgba(6, 21, 41, .34);
 
   /* ---------- 4. ÉTAT INTERNE (dark) ---------- */
-  --d-bg: #07111F;
-  --d-bg-alt: #0A1524;
-  --d-surface: #101B2D;
-  --d-surface-2: #16243A;
-  --d-surface-3: #1C2C45;
-  --d-glass: rgba(16, 27, 45, .72);
+  --d-bg: #050D18;
+  --d-bg-alt: #081426;
+  --d-surface: #0B1B30;
+  --d-surface-2: #10233C;
+  --d-surface-3: #162C49;
+  --d-glass: rgba(11, 27, 48, .76);
   --d-glass-border: rgba(255, 255, 255, .09);
   --d-text: #FFFFFF;
-  --d-text-secondary: #94A3B8;
-  --d-text-muted: #6B7C93;
-  --d-border: rgba(255, 255, 255, .08);
-  --d-border-strong: rgba(255, 255, 255, .16);
-  --d-accent: #3B82F6;
-  --d-accent-hover: #60A5FA;
-  --d-accent-soft: rgba(59, 130, 246, .16);
-  --d-accent-soft-2: rgba(59, 130, 246, .26);
+  --d-text-secondary: #A3B6CE;
+  --d-text-muted: #7A8EA8;
+  --d-border: rgba(255, 255, 255, .09);
+  --d-border-strong: rgba(255, 255, 255, .17);
+  --d-accent: #4A8AE8;
+  --d-accent-hover: #7FB0F2;
+  --d-accent-soft: rgba(74, 138, 232, .18);
+  --d-accent-soft-2: rgba(74, 138, 232, .28);
 
   /* ---------- 5. TYPOGRAPHIE ---------- */
-  --font-sans: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-display: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Baloo 2", "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-sans);
   --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, "Roboto Mono", Menlo, monospace;
-  --font-numeric: "Inter", -apple-system, sans-serif;
 
-  --fs-display: clamp(2.6rem, 1.2rem + 4.4vw, 5rem);
-  --fs-h1: clamp(2rem, 1.4rem + 2.2vw, 3.25rem);
-  --fs-h2: clamp(1.55rem, 1.2rem + 1.4vw, 2.25rem);
-  --fs-h3: clamp(1.2rem, 1.05rem + .6vw, 1.5rem);
+  --fs-display: clamp(2.5rem, 1.1rem + 4.6vw, 4.6rem);
+  --fs-h1: clamp(1.9rem, 1.3rem + 2.2vw, 3rem);
+  --fs-h2: clamp(1.5rem, 1.18rem + 1.3vw, 2.1rem);
+  --fs-h3: clamp(1.18rem, 1.04rem + .6vw, 1.42rem);
   --fs-h4: 1.0625rem;
   --fs-body-lg: 1.0625rem;
   --fs-body: .9375rem;
@@ -112,14 +184,14 @@
   --fs-caption: .8125rem;
   --fs-micro: .6875rem;
 
-  --lh-tight: 1.06;
-  --lh-snug: 1.22;
-  --lh-normal: 1.45;
-  --lh-relaxed: 1.65;
+  --lh-tight: 1.12;
+  --lh-snug: 1.26;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.68;
 
-  --ls-display: -.035em;
-  --ls-tight: -.022em;
-  --ls-normal: -.011em;
+  --ls-display: -.02em;
+  --ls-tight: -.012em;
+  --ls-normal: -.005em;
   --ls-wide: .02em;
   --ls-caps: .13em;
 
@@ -127,7 +199,8 @@
   --fw-medium: 500;
   --fw-semibold: 600;
   --fw-bold: 700;
-  --fw-black: 800;
+  --fw-extrabold: 800;
+  --fw-black: 800;   /* alias historique */
 
   /* ---------- 6. ESPACEMENT (4pt) ---------- */
   --s-0: 0;
@@ -146,25 +219,25 @@
   --s-13: 8rem;    /* 128 */
 
   /* ---------- 7. RAYONS ---------- */
-  --r-xs: 6px;
-  --r-sm: 10px;
-  --r-md: 14px;
-  --r-lg: 18px;
-  --r-xl: 24px;
-  --r-2xl: 32px;
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 20px;
+  --r-xl: 26px;
+  --r-2xl: 34px;
   --r-3xl: 44px;
   --r-full: 999px;
 
-  /* ---------- 8. OMBRES / ÉLÉVATION ---------- */
-  --sh-xs: 0 1px 2px rgba(7, 17, 31, .06);
-  --sh-sm: 0 1px 2px rgba(7, 17, 31, .05), 0 2px 6px rgba(7, 17, 31, .05);
-  --sh-md: 0 2px 4px rgba(7, 17, 31, .04), 0 8px 20px rgba(7, 17, 31, .07);
-  --sh-lg: 0 4px 8px rgba(7, 17, 31, .05), 0 18px 40px rgba(7, 17, 31, .10);
-  --sh-xl: 0 8px 16px rgba(7, 17, 31, .06), 0 32px 72px rgba(7, 17, 31, .14);
-  --sh-brand: 0 6px 18px rgba(37, 99, 235, .28);
-  --sh-brand-lg: 0 12px 40px rgba(37, 99, 235, .38);
-  --sh-cyan: 0 6px 20px rgba(34, 211, 238, .32);
-  --sh-inset: inset 0 1px 0 rgba(255, 255, 255, .6);
+  /* ---------- 8. OMBRES / ÉLÉVATION (teintées marine) ---------- */
+  --sh-xs: 0 1px 2px rgba(10, 33, 64, .07);
+  --sh-sm: 0 1px 2px rgba(10, 33, 64, .05), 0 2px 6px rgba(10, 33, 64, .06);
+  --sh-md: 0 2px 4px rgba(10, 33, 64, .04), 0 10px 24px rgba(10, 33, 64, .09);
+  --sh-lg: 0 4px 8px rgba(10, 33, 64, .05), 0 20px 44px rgba(10, 33, 64, .12);
+  --sh-xl: 0 10px 18px rgba(10, 33, 64, .07), 0 36px 76px rgba(10, 33, 64, .17);
+  --sh-brand: 0 4px 10px rgba(10, 33, 64, .20), 0 10px 26px rgba(23, 69, 127, .26);
+  --sh-brand-lg: 0 10px 22px rgba(10, 33, 64, .26), 0 22px 50px rgba(23, 69, 127, .34);
+  --sh-azure: 0 6px 20px rgba(44, 107, 209, .30);
+  --sh-inset: inset 0 1px 0 rgba(255, 255, 255, .7);
 
   /* ---------- 9. MOUVEMENT ---------- */
   --d-instant: 90ms;
@@ -191,20 +264,22 @@
   --z-tooltip: 700;
 
   /* ---------- 11. LAYOUT ---------- */
-  --sidebar-w: 268px;
-  --sidebar-w-collapsed: 76px;
+  --sidebar-w: 272px;
+  --sidebar-w-md: 236px;
+  --sidebar-w-collapsed: 78px;
   --topbar-h: 68px;
-  --tabbar-h: 64px;
+  --tabbar-h: 66px;
   --container: 1280px;
-  --container-wide: 1480px;
+  --container-wide: 1500px;
   --container-text: 68ch;
 
   /* ---------- 12. BREAKPOINTS (référence) ---------- */
-  --bp-sm: 480px;
+  --bp-xs: 400px;
+  --bp-sm: 560px;
   --bp-md: 768px;
   --bp-lg: 1024px;
-  --bp-xl: 1280px;
-  --bp-2xl: 1440px;
+  --bp-xl: 1180px;
+  --bp-2xl: 1400px;
 }
 
 /* ============================================================
@@ -213,10 +288,10 @@
 [data-theme="dark"] {
   color-scheme: dark;
 
-  --ttm-cyan-ink: #67E8F9;
-  --ttm-orange-ink: #FBBF24;
-  --grad-btn: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
-  --grad-text: linear-gradient(135deg, #60A5FA 0%, #22D3EE 100%);
+  --grad-btn: linear-gradient(135deg, #2C6BD1 0%, #17457F 100%);
+  --grad-navy: linear-gradient(168deg, #0B1B30 0%, #071527 60%, #050D18 100%);
+  --grad-text: linear-gradient(135deg, #7FB0F2 0%, #4A8AE8 100%);
+  --grad-brand-soft: linear-gradient(135deg, rgba(74, 138, 232, .18) 0%, rgba(23, 69, 127, .16) 100%);
 
   --ttm-bg: var(--d-bg);
   --ttm-bg-alt: var(--d-bg-alt);
@@ -224,43 +299,54 @@
   --ttm-surface-2: var(--d-surface-2);
   --ttm-surface-3: var(--d-surface-3);
   --ttm-surface-inverse: #FFFFFF;
-  --ttm-overlay: rgba(2, 6, 14, .72);
+  --ttm-overlay: rgba(2, 7, 15, .74);
   --ttm-glass: var(--d-glass);
   --ttm-glass-border: var(--d-glass-border);
 
   --ttm-text: var(--d-text);
   --ttm-text-secondary: var(--d-text-secondary);
   --ttm-text-muted: var(--d-text-muted);
-  --ttm-text-inverse: #07111F;
-  --ttm-text-brand: #7DD3FC;
+  --ttm-text-inverse: #0A2140;
+  --ttm-text-brand: #7FB0F2;
 
   --ttm-border: var(--d-border);
   --ttm-border-strong: var(--d-border-strong);
-  --ttm-border-brand: rgba(59, 130, 246, .40);
+  --ttm-border-brand: rgba(74, 138, 232, .38);
 
   --ttm-accent: var(--d-accent);
   --ttm-accent-hover: var(--d-accent-hover);
+  --ttm-brand: var(--ttm-accent);
+  --ttm-brand-ink: #7FB0F2;
   --ttm-accent-soft: var(--d-accent-soft);
   --ttm-accent-soft-2: var(--d-accent-soft-2);
 
   --ttm-success: #4ADE80;
-  --ttm-success-soft: rgba(74, 222, 128, .14);
+  --ttm-success-soft: rgba(74, 222, 128, .15);
   --ttm-warning: #FBBF24;
-  --ttm-warning-soft: rgba(251, 191, 36, .14);
-  --ttm-danger: #F87171;
-  --ttm-danger-soft: rgba(248, 113, 113, .14);
-  --ttm-info: #60A5FA;
-  --ttm-info-soft: rgba(96, 165, 250, .14);
-  --ttm-neutral-soft: rgba(148, 163, 184, .12);
+  --ttm-warning-soft: rgba(251, 191, 36, .15);
+  --ttm-danger: #FB7185;
+  --ttm-danger-soft: rgba(251, 113, 133, .15);
+  --ttm-info: #7FB0F2;
+  --ttm-info-soft: rgba(127, 176, 242, .15);
+  --ttm-neutral-soft: rgba(163, 182, 206, .13);
 
-  --sh-xs: 0 1px 2px rgba(0, 0, 0, .40);
-  --sh-sm: 0 1px 2px rgba(0, 0, 0, .40), 0 2px 8px rgba(0, 0, 0, .34);
-  --sh-md: 0 2px 6px rgba(0, 0, 0, .38), 0 10px 26px rgba(0, 0, 0, .40);
-  --sh-lg: 0 6px 14px rgba(0, 0, 0, .42), 0 22px 48px rgba(0, 0, 0, .48);
-  --sh-xl: 0 10px 22px rgba(0, 0, 0, .46), 0 36px 80px rgba(0, 0, 0, .58);
-  --sh-inset: inset 0 1px 0 rgba(255, 255, 255, .05);
+  --ttm-orange-ink: #FBBF24;
+  --ttm-teal-ink: #67E8F9;
 
-  --grad-brand-soft: linear-gradient(135deg, rgba(59, 130, 246, .20) 0%, rgba(34, 211, 238, .14) 100%);
-  --grad-pitch: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(37, 99, 235, .30) 0%, transparent 70%),
-                radial-gradient(ellipse 60% 50% at 80% 100%, rgba(34, 211, 238, .20) 0%, transparent 70%);
+  --sh-xs: 0 1px 2px rgba(0, 0, 0, .45);
+  --sh-sm: 0 1px 2px rgba(0, 0, 0, .45), 0 2px 8px rgba(0, 0, 0, .38);
+  --sh-md: 0 2px 6px rgba(0, 0, 0, .40), 0 12px 28px rgba(0, 0, 0, .44);
+  --sh-lg: 0 6px 14px rgba(0, 0, 0, .46), 0 24px 52px rgba(0, 0, 0, .52);
+  --sh-xl: 0 10px 24px rgba(0, 0, 0, .50), 0 40px 84px rgba(0, 0, 0, .62);
+  --sh-brand: 0 4px 12px rgba(0, 0, 0, .44), 0 10px 28px rgba(23, 69, 127, .40);
+  --sh-brand-lg: 0 10px 26px rgba(0, 0, 0, .50), 0 24px 54px rgba(23, 69, 127, .46);
+  --sh-inset: inset 0 1px 0 rgba(255, 255, 255, .06);
+
+  --rail-bg: linear-gradient(180deg, #08182B 0%, #061225 55%, #040C17 100%);
+  --rail-border: rgba(255, 255, 255, .08);
+  --rail-glass: rgba(255, 255, 255, .06);
+  --rail-shadow: 0 24px 60px rgba(0, 0, 0, .58);
+
+  --grad-pitch: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(44, 107, 209, .22) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 50% at 85% 100%, rgba(23, 69, 127, .22) 0%, transparent 70%);
 }

@@ -1,6 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <rect width="32" height="32" rx="8" fill="#2563EB"/>
-  <path d="M9 10h14v2.2h-5.6v10.2h-2.8V12.2H9z" fill="#fff"/>
-  <circle cx="16" cy="23" r="3.4" fill="none" stroke="#fff" stroke-width="1.4"/>
-  <circle cx="16" cy="23" r="1.4" fill="#fff"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64"><title>TTM</title>
+  <defs>
+  <linearGradient id="fv-bg" x1="4" y1="2" x2="60" y2="62" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#0C2748"/>
+  <stop offset="0.46" stop-color="#0E2C56"/>
+  <stop offset="1" stop-color="#17457F"/>
+  </linearGradient>
+  <linearGradient id="fv-sheen" x1="6" y1="2" x2="42" y2="46" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#ffffff" stop-opacity="0.26"/>
+  <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.05"/>
+  <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient id="fv-glow" cx="32" cy="41.5" r="15" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#ffffff" stop-opacity="0.34"/>
+  <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+  </radialGradient>
+  <clipPath id="fv-clip"><rect x="1" y="1" width="62" height="62" rx="19.5"/></clipPath>
+  </defs>
+  <rect x="1" y="1" width="62" height="62" rx="19.5" fill="url(#fv-bg)"/>
+  <g clip-path="url(#fv-clip)">
+  <rect x="1" y="1" width="62" height="62" rx="19.5" fill="url(#fv-sheen)"/>
+  <circle cx="32" cy="41.5" r="15" fill="url(#fv-glow)"/>
+  <g stroke="#ffffff" fill="none" stroke-linecap="round">
+  <path d="M9 41.5h46" stroke-opacity="0.11" stroke-width="1.6"/>
+  <circle cx="32" cy="41.5" r="13.2" stroke-opacity="0.24" stroke-width="1.5" stroke-dasharray="3.2 4.4"/>
+  </g>
+  <path d="M14 15.6h36a2.4 2.4 0 0 1 2.4 2.4v3.6a2.4 2.4 0 0 1-2.4 2.4H36.5v7.6a2.4 2.4 0 0 1-2.4 2.4h-4.2a2.4 2.4 0 0 1-2.4-2.4V24H14a2.4 2.4 0 0 1-2.4-2.4V18a2.4 2.4 0 0 1 2.4-2.4Z" fill="#ffffff"/>
+  <circle cx="32" cy="41.6" r="8.6" fill="#ffffff"/>
+  <circle cx="32" cy="41.6" r="4.9" fill="none" stroke="#0E2C56" stroke-width="1.9"/>
+  <circle cx="32" cy="41.6" r="1.55" fill="#0E2C56"/>
+  <circle cx="19.78" cy="45.95" r="3" fill="#ffffff" fill-opacity="0.94"/>
+  <circle cx="44.22" cy="45.95" r="3" fill="#ffffff" fill-opacity="0.94"/>
+  </g>
+  <rect x="1.75" y="1.75" width="60.5" height="60.5" rx="19.25" fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="1.5"/>
+  </svg>

@@ -1,35 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="TTM">
-  <title>TTM — Trouve ton match</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="TTM — Trouve ton match"><title>TTM — Trouve ton match</title>
   <defs>
-    <linearGradient id="ttmGrad" x1="6" y1="4" x2="58" y2="60" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#3B82F6"/>
-      <stop offset="0.52" stop-color="#2563EB"/>
-      <stop offset="1" stop-color="#22D3EE"/>
-    </linearGradient>
-    <linearGradient id="ttmSheen" x1="10" y1="4" x2="40" y2="46" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#ffffff" stop-opacity="0.34"/>
-      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0.05"/>
-      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
-    </linearGradient>
+  <linearGradient id="tm-bg" x1="4" y1="2" x2="60" y2="62" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#0C2748"/>
+  <stop offset="0.46" stop-color="#0E2C56"/>
+  <stop offset="1" stop-color="#17457F"/>
+  </linearGradient>
+  <linearGradient id="tm-sheen" x1="6" y1="2" x2="42" y2="46" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#ffffff" stop-opacity="0.26"/>
+  <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.05"/>
+  <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient id="tm-glow" cx="32" cy="41.5" r="15" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#ffffff" stop-opacity="0.34"/>
+  <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+  </radialGradient>
+  <clipPath id="tm-clip"><rect x="1" y="1" width="62" height="62" rx="19.5"/></clipPath>
   </defs>
-
-  <!-- Conteneur -->
-  <rect x="2" y="2" width="60" height="60" rx="19" fill="url(#ttmGrad)"/>
-  <rect x="2" y="2" width="60" height="60" rx="19" fill="url(#ttmSheen)"/>
-
-  <!-- Lignes de terrain (discrètes) -->
-  <g stroke="#ffffff" stroke-opacity="0.30" stroke-width="1.5" stroke-linecap="round" fill="none">
-    <path d="M12 43.5h40"/>
-    <path d="M12 13.5h40" stroke-opacity="0.16"/>
+  <rect x="1" y="1" width="62" height="62" rx="19.5" fill="url(#tm-bg)"/>
+  <g clip-path="url(#tm-clip)">
+  <rect x="1" y="1" width="62" height="62" rx="19.5" fill="url(#tm-sheen)"/>
+  <circle cx="32" cy="41.5" r="15" fill="url(#tm-glow)"/>
+  <g stroke="#ffffff" fill="none" stroke-linecap="round">
+  <path d="M9 41.5h46" stroke-opacity="0.11" stroke-width="1.6"/>
+  <circle cx="32" cy="41.5" r="13.2" stroke-opacity="0.24" stroke-width="1.5" stroke-dasharray="3.2 4.4"/>
   </g>
-
-  <!-- Lettre T = trait de touche + axe médian -->
-  <path d="M17 17.5h30a2 2 0 0 1 2 2v2.2a2 2 0 0 1-2 2H36.6v19.4a2 2 0 0 1-2 2h-4.2a2 2 0 0 1-2-2V23.7H17a2 2 0 0 1-2-2v-2.2a2 2 0 0 1 2-2Z" fill="#ffffff"/>
-
-  <!-- Cercle central = terrain / rencontre -->
-  <circle cx="32" cy="43.6" r="7.1" fill="none" stroke="#ffffff" stroke-opacity="0.92" stroke-width="2.1"/>
-
-  <!-- Nœud lumineux = le match trouvé -->
-  <circle cx="32" cy="43.6" r="3.05" fill="#ffffff"/>
-  <circle cx="32" cy="43.6" r="3.05" fill="#22D3EE" fill-opacity="0.45"/>
-</svg>
+  <path d="M14 15.6h36a2.4 2.4 0 0 1 2.4 2.4v3.6a2.4 2.4 0 0 1-2.4 2.4H36.5v7.6a2.4 2.4 0 0 1-2.4 2.4h-4.2a2.4 2.4 0 0 1-2.4-2.4V24H14a2.4 2.4 0 0 1-2.4-2.4V18a2.4 2.4 0 0 1 2.4-2.4Z" fill="#ffffff"/>
+  <circle cx="32" cy="41.6" r="8.6" fill="#ffffff"/>
+  <circle cx="32" cy="41.6" r="4.9" fill="none" stroke="#0E2C56" stroke-width="1.9"/>
+  <circle cx="32" cy="41.6" r="1.55" fill="#0E2C56"/>
+  <circle cx="19.78" cy="45.95" r="3" fill="#ffffff" fill-opacity="0.94"/>
+  <circle cx="44.22" cy="45.95" r="3" fill="#ffffff" fill-opacity="0.94"/>
+  </g>
+  <rect x="1.75" y="1.75" width="60.5" height="60.5" rx="19.25" fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="1.5"/>
+  </svg>

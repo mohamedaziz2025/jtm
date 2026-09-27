@@ -209,10 +209,31 @@
 
   TTM.logo = function (size, mono) {
     const s = size || 32;
-    if (mono) {
-      return '<svg width="' + s + '" height="' + s + '" viewBox="0 0 64 64" fill="none" aria-label="TTM"><rect x="4" y="4" width="56" height="56" rx="18" fill="currentColor"/><path d="M14 43h36" stroke="#fff" stroke-opacity=".35" stroke-width="2" stroke-linecap="round"/><path d="M19 19h26v5h-9v19h-8V24h-9z" fill="#fff"/><circle cx="32" cy="43" r="6" stroke="#fff" stroke-width="2.4"/><circle cx="32" cy="43" r="2.6" fill="#fff"/></svg>';
-    }
-    return '<svg width="' + s + '" height="' + s + '" viewBox="0 0 64 64" fill="none" aria-label="TTM"><defs><linearGradient id="ttmLg' + s + '" x1="6" y1="4" x2="58" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#3B82F6"/><stop offset=".52" stop-color="#2563EB"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs><rect x="2" y="2" width="60" height="60" rx="19" fill="url(#ttmLg' + s + ')"/><path d="M12 43.5h40" stroke="#fff" stroke-opacity=".3" stroke-width="1.5" stroke-linecap="round"/><path d="M17 17.5h30a2 2 0 0 1 2 2v2.2a2 2 0 0 1-2 2H36.6v19.4a2 2 0 0 1-2 2h-4.2a2 2 0 0 1-2-2V23.7H17a2 2 0 0 1-2-2v-2.2a2 2 0 0 1 2-2Z" fill="#fff"/><circle cx="32" cy="43.6" r="7.1" stroke="#fff" stroke-width="2.1"/><circle cx="32" cy="43.6" r="3.05" fill="#fff"/></svg>';
+    const u = "ttmMk" + s + (mono ? "m" : "");
+    const ink = mono ? "currentColor" : "#ffffff";
+    const ball = mono ? "currentColor" : "#0E2C56";
+    return '<svg class="ttm-mark" width="' + s + '" height="' + s + '" viewBox="0 0 64 64" fill="none" role="img" aria-label="TTM — Trouve ton match">' +
+      "<defs>" +
+      '<linearGradient id="' + u + 'Bg" x1="4" y1="2" x2="60" y2="62" gradientUnits="userSpaceOnUse"><stop stop-color="' + (mono ? "currentColor" : "#0C2748") + '"/><stop offset=".46" stop-color="' + (mono ? "currentColor" : "#0E2C56") + '"/><stop offset="1" stop-color="' + (mono ? "currentColor" : "#17457F") + '"/></linearGradient>' +
+      '<linearGradient id="' + u + 'Sh" x1="6" y1="2" x2="42" y2="46" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" stop-opacity=".26"/><stop offset=".5" stop-color="#fff" stop-opacity=".05"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>' +
+      '<radialGradient id="' + u + 'Gl" cx="32" cy="41.5" r="15" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" stop-opacity=".34"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>' +
+      '<clipPath id="' + u + 'Cp"><rect x="1" y="1" width="62" height="62" rx="19.5"/></clipPath>' +
+      "</defs>" +
+      '<rect x="1" y="1" width="62" height="62" rx="19.5" fill="url(#' + u + 'Bg)"/>' +
+      '<g clip-path="url(#' + u + 'Cp)">' +
+      '<rect x="1" y="1" width="62" height="62" rx="19.5" fill="url(#' + u + 'Sh)"/>' +
+      '<circle cx="32" cy="41.5" r="15" fill="url(#' + u + 'Gl)"/>' +
+      '<g stroke="#ffffff" fill="none" stroke-linecap="round"><path d="M9 41.5h46" stroke-opacity=".11" stroke-width="1.6"/>' +
+      '<circle cx="32" cy="41.5" r="13.2" stroke-opacity=".24" stroke-width="1.5" stroke-dasharray="3.2 4.4"/></g>' +
+      '<path d="M14 15.6h36a2.4 2.4 0 0 1 2.4 2.4v3.6a2.4 2.4 0 0 1-2.4 2.4H36.5v7.6a2.4 2.4 0 0 1-2.4 2.4h-4.2a2.4 2.4 0 0 1-2.4-2.4V24H14a2.4 2.4 0 0 1-2.4-2.4V18a2.4 2.4 0 0 1 2.4-2.4Z" fill="' + ink + '"/>' +
+      '<circle cx="32" cy="41.6" r="8.6" fill="' + ink + '"/>' +
+      '<circle cx="32" cy="41.6" r="4.9" fill="none" stroke="' + ball + '" stroke-width="1.9"/>' +
+      '<circle cx="32" cy="41.6" r="1.55" fill="' + ball + '"/>' +
+      '<circle cx="19.78" cy="45.95" r="3" fill="' + ink + '" fill-opacity=".94"/>' +
+      '<circle cx="44.22" cy="45.95" r="3" fill="' + ink + '" fill-opacity=".94"/>' +
+      "</g>" +
+      '<rect x="1.75" y="1.75" width="60.5" height="60.5" rx="19.25" fill="none" stroke="#ffffff" stroke-opacity=".16" stroke-width="1.5"/>' +
+      "</svg>";
   };
 
   TTM.wordmark = function () {

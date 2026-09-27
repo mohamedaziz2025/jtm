@@ -6,9 +6,8 @@
 <title>TTM — Plateforme web · Prototype interactif</title>
 <meta name="description" content="TTM — Trouve ton match. Prototype web de la plateforme de mise en relation des clubs de football.">
 <link rel="icon" href="../assets/logo/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preload" href="../assets/fonts/baloo2-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/tokens.css">
 <link rel="stylesheet" href="../assets/css/base.css">
 <link rel="stylesheet" href="../assets/css/components.css">
@@ -95,7 +94,7 @@
 </aside>
 
 <!-- ======================= TOPBAR ======================= -->
-<header class="topbar" style="margin-left:var(--sidebar-w)">
+<header class="topbar">
   <button class="btn btn-ghost btn-icon only-md" id="menuBtn" aria-label="Ouvrir le menu"><span data-ico="menu"></span></button>
   <div class="flex-1" style="min-width:0">
     <div class="crumbs hide-sm" id="crumbs"></div>
@@ -146,7 +145,7 @@
 </header>
 
 <!-- ======================= MAIN ======================= -->
-<main class="app-main" id="main" style="margin-left:var(--sidebar-w)">
+<main class="app-main" id="main">
   <div id="view" class="view-root"></div>
   <footer class="app-foot">
     <div class="row-2 wrap" style="gap:16px">
@@ -163,6 +162,18 @@
     </div>
   </footer>
 </main>
+
+<!-- Voile du tiroir latéral -->
+<div class="scrim only-md" id="scrim"></div>
+
+<!-- Barre d'onglets (mobile) -->
+<nav class="tabbar" id="tabbar" aria-label="Navigation principale">
+  <a class="tabbar-item" data-go="dashboard"><span data-ico="home"></span><span>Accueil</span></a>
+  <a class="tabbar-item" data-go="marketplace"><span data-ico="search"></span><span>Marché</span></a>
+  <a class="tabbar-item" data-go="calendar"><span data-ico="calendar"></span><span>Agenda</span></a>
+  <a class="tabbar-item" data-go="messages"><span data-ico="message"></span><span>Messages</span><span class="tabbar-badge" id="tabBadgeMsgs">0</span></a>
+  <a class="tabbar-item" data-go="clubs"><span data-ico="globe"></span><span>Clubs</span></a>
+</nav>
 
 <!-- FAB mobile -->
 <button class="fab only-md" id="fab" aria-label="Publier un match" style="display:none">

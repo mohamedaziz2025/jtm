@@ -116,7 +116,7 @@
 .dk-bars { display: grid; gap: 2.4%; }
 .dk-bar { display: grid; grid-template-columns: 120px 1fr 52px; align-items: center; gap: 3%; font-size: clamp(11px, 1.05vw, 14px); }
 .dk-bar-track { height: 10px; border-radius: 999px; background: var(--ttm-surface-3); overflow: hidden; }
-.dk-bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--ttm-blue), var(--ttm-cyan)); }
+.dk-bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--ttm-navy-500), var(--ttm-azure-400)); }
 
 .dk-phones { display: flex; gap: 2.4%; }
 .dk-phone-mini { flex: 1; border-radius: 16px; border: 1px solid var(--ttm-border); background: var(--ttm-bg); padding: 5% 4%; display: grid; gap: 8px; align-content: start; }
@@ -126,7 +126,7 @@
 .dk-chip-mini { font-size: clamp(9px, .92vw, 12px); padding: 4px 8px; border-radius: 999px; background: var(--ttm-surface-2); border: 1px solid var(--ttm-border); color: var(--ttm-text-secondary); }
 
 .dk-progress { height: 3px; background: var(--ttm-surface-2); }
-.dk-progress i { display: block; height: 100%; background: linear-gradient(90deg, var(--ttm-blue), var(--ttm-cyan)); transition: width var(--d-base) var(--e-out); }
+.dk-progress i { display: block; height: 100%; background: linear-gradient(90deg, var(--ttm-navy-500), var(--ttm-azure-400)); transition: width var(--d-base) var(--e-out); }
 
 .dk-notes {
   position: fixed;

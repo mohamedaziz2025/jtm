@@ -234,7 +234,7 @@
     $("#pageTitle").textContent = titleOf(def, r);
     $("#crumbs").innerHTML =
       '<span>TTM</span><span class="sep">/</span><span>' + E(titleOf(def, r)) + "</span>";
-    $$("#nav .nav-item").forEach((a) => a.classList.toggle("is-active", a.dataset.go === r.name));
+    $$("#nav .nav-item, #tabbar .tabbar-item").forEach((a) => a.classList.toggle("is-active", a.dataset.go === r.name));
     TTM.closeAll();
     document.body.classList.remove("sidebar-open");
     TTM.initReveal(view);
@@ -270,6 +270,9 @@
     setTxt("#topBadge", stats.notifications);
     const tb = $("#topBadge");
     if (tb) tb.style.display = stats.notifications ? "" : "none";
+    setTxt("#tabBadgeMsgs", stats.unreadMsgs);
+    const tbm = $("#tabBadgeMsgs");
+    if (tbm) tbm.style.display = stats.unreadMsgs ? "" : "none";
 
     const dd = $("#ddNotifs");
     if (dd) dd.innerHTML = s.notifications.slice(0, 5).map((n) => notifRow(n, true)).join("") ||
@@ -322,6 +325,7 @@
       document.body.classList.toggle("sidebar-open");
       TTM.haptic(8);
     };
+    $("#scrim").onclick = () => document.body.classList.remove("sidebar-open");
     $("#themeBtn").onclick = () => TTM.theme.toggle();
 
     const gs = $("#globalSearch");
@@ -880,7 +884,7 @@
               <div class="cat-badge cat-${t.cat.toLowerCase()}">${E(t.cat)}</div>
               <div class="grow">
                 <div class="t-caption" style="font-weight:600">${E(t.name)}</div>
-                <div class="t-micro t-muted">${E(fmtD(t.date))} · ${E(t.city)} · ${t.slots} place${t.slots > 1 ? "s" : ""}</div>
+                <div class="t-micro t-secondary">${E(fmtD(t.date))} · ${E(t.city)} · ${t.slots} place${t.slots > 1 ? "s" : ""}</div>
               </div>
               <button class="btn btn-primary btn-xs" data-act="join" data-id="${t.id}">S'inscrire</button>
             </div>`).join("")}
@@ -1365,10 +1369,10 @@
 
   <div class="grid-main-side">
     <section class="card card-pad">
-      <div class="row-between" style="margin-bottom:var(--s-4)">
+      <div class="row-between cal-head" style="margin-bottom:var(--s-4)">
         <div class="row-2">
           <button class="btn btn-ghost btn-icon btn-sm" data-act="cal-prev" aria-label="Mois précédent">${TTM.icon("chevronLeft", 18)}</button>
-          <b class="t-h3" style="min-width:170px;text-align:center">${E(cap(label))}</b>
+          <b class="t-h3 cal-nav-title">${E(cap(label))}</b>
           <button class="btn btn-ghost btn-icon btn-sm" data-act="cal-next" aria-label="Mois suivant">${TTM.icon("chevronRight", 18)}</button>
         </div>
         <div class="row-2 wrap" style="gap:10px">

@@ -145,7 +145,7 @@
         '<div class="row-between" style="margin-bottom:12px"><div class="row-2">' + TTM.clubLogo(c, "club-logo-sm") +
         '<div><div class="t-body-sm" style="font-weight:700">' + TTM.esc(c.name) + "</div>" +
         '<div class="t-micro t-muted">MATCH RECOMMANDÉ</div></div></div>' + TTM.compatHTML(rec._score.pct, "compat-ring-sm") + "</div>" +
-        '<div class="row" style="gap:14px;font-size:12px;color:var(--ttm-text-secondary)">' +
+        '<div class="row" style="gap:14px;font-size:12px;color:rgba(255,255,255,.82)">' +
         "<span>" + TTM.catBadge(rec.cat) + "</span>" +
         "<span>" + TTM.esc(TTM.date.dayMin(rec.date)) + " " + TTM.date.num(rec.date) + " oct.</span>" +
         "<span>" + rec.time + "</span>" +

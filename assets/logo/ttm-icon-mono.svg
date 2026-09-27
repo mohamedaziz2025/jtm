@@ -1,8 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="TTM">
-  <title>TTM — monochrome</title>
-  <rect x="2" y="2" width="60" height="60" rx="19" fill="#0B1220"/>
-  <path d="M12 43.5h40" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-  <path d="M17 17.5h30a2 2 0 0 1 2 2v2.2a2 2 0 0 1-2 2H36.6v19.4a2 2 0 0 1-2 2h-4.2a2 2 0 0 1-2-2V23.7H17a2 2 0 0 1-2-2v-2.2a2 2 0 0 1 2-2Z" fill="#ffffff"/>
-  <circle cx="32" cy="43.6" r="7.1" fill="none" stroke="#ffffff" stroke-width="2.1"/>
-  <circle cx="32" cy="43.6" r="3.05" fill="#ffffff"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="TTM"><title>TTM — monochrome</title>
+  <rect x="1" y="1" width="62" height="62" rx="19.5" fill="#0A2140"/>
+  <g stroke="#ffffff" fill="none" stroke-linecap="round">
+  <path d="M9 41.5h46" stroke-opacity="0.2" stroke-width="1.6"/>
+  <circle cx="32" cy="41.5" r="13.2" stroke-opacity="0.34" stroke-width="1.5" stroke-dasharray="3.2 4.4"/>
+  </g>
+  <path d="M14 15.6h36a2.4 2.4 0 0 1 2.4 2.4v3.6a2.4 2.4 0 0 1-2.4 2.4H36.5v7.6a2.4 2.4 0 0 1-2.4 2.4h-4.2a2.4 2.4 0 0 1-2.4-2.4V24H14a2.4 2.4 0 0 1-2.4-2.4V18a2.4 2.4 0 0 1 2.4-2.4Z" fill="#ffffff"/>
+  <circle cx="32" cy="41.6" r="8.6" fill="#ffffff"/>
+  <circle cx="32" cy="41.6" r="4.9" fill="none" stroke="#0A2140" stroke-width="1.9"/>
+  <circle cx="32" cy="41.6" r="1.55" fill="#0A2140"/>
+  <circle cx="19.78" cy="45.95" r="3" fill="#ffffff" fill-opacity="0.94"/>
+  <circle cx="44.22" cy="45.95" r="3" fill="#ffffff" fill-opacity="0.94"/>
+  </svg>
